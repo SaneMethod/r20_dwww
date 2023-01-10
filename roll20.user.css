@@ -2,13 +2,17 @@
 @name           DWWW
 @description    Fix Roll20's broken dark mode implementation for the DW character sheet.
 @namespace      github.com/SaneMethod/r20_dwww
-@version        1.0.1
+@version        1.0.2
 @author         SaneMethod
 ==/UserStyle== */
+
 @-moz-document domain("app.roll20.net") {
-    .sheet-rolltemplate-move .sheet-rt-content, .sheet-rolltemplate-spell .sheet-rt-content, .sheet-rolltemplate-dwgeneral.sheet-rolltemplate-darkmode .sheet-rt-content {
+    .sheet-rolltemplate-move.sheet-rolltemplate-darkmode .sheet-rt-content, .sheet-rolltemplate-spell .sheet-rt-content, .sheet-rolltemplate-dwgeneral.sheet-rolltemplate-darkmode .sheet-rt-content {
         background-color: #333;
         border-radius: 6px;
+    }
+    .sheet-rolltemplate-move .sheet-rt-row:last-child, .sheet-rolltemplate-spell .sheet-rt-row:last-child, .sheet-rolltemplate-dwgeneral .sheet-rt-row:last-child{
+        border-bottom:none;
     }
     :where(.sheet-darkmode.ui-widget-content) .sheet-rolltemplate-darkmode{
         color:white;
